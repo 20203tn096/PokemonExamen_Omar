@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Listado de Videojuegos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+</head>
+<body onload="findData();">
+<div id="content">
+    <br>
+    <button type="button" class="btn-outline-success" onclick="findPokemon();" data-bs-toggle="modal" data-bs-target="#create"><i class="fas fa-plus"></i> Agregar Videojuego</button>
+    <br>
+    <table class="table">
+        <thead class="table-dark">
+        <th>Nombre</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+        <th>Pokemon</th>
+        <th>Acciones</th>
+        </thead>
+        <tbody id="res">
+
+        </tbody>
+
+    </table>
+</div>
+
+<div class="modal fade" id="create" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form-control">
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cerrar</button>
+                <button type="button" class="btn btn-success" onclick="createUser();"><i class="fas fa-plus"></i> Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel3">Eliminar Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="id2">
+                <label>Seguro que quieres eliminar el registro de</label>
+                <span id="name2" style="font-weight: bold"></span>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cerrar</button>
+                <button type="button" class="btn btn-danger" onclick="deletePokemon();" ><i class="fas fa-trash"></i> Eliminar</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="update" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel1">Actualizar Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="id3">
+                <label>Nombre :</label>
+                <input class="form-control" type="text" name="name" id="name1"  />
+                <br>
+                <label>Apellido Paterno:</label>
+                <input class="form-control" type="text" name="lastname1"  id="lastname11"/>
+                <br>
+                <label>Apellido Materno:</label>
+                <input class="form-control" type="text" name="lastname2" id="lastname21" />
+                <br>
+                <label>Pokemon:</label>
+                <select class="form-select" name="text" id="pokemon1">
+
+                </select>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="updateUser();" ><i class="fas fa-edit"></i> Modificar</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script  src="../assets/dist/js/main.js"></script>
+<script  src="../assets/plugins/bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+</html>
